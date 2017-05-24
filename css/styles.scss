@@ -26,7 +26,7 @@
 
 /* = Variables = */
 $font-stack: "Open Sans", Arial, sans-serif;
-$font-header: "Bevan", cursive;
+$font-header: "Sanchez", serif;;
 
 
 /* Grays */
@@ -38,10 +38,9 @@ $charcoal:  #191919;
 $black:     #000;
 
 /* The brand colors (name them the color) */
-$brand-navy: #111e51;
-$brand-red: #d94246;
+$brand-navy: #0d1640;
+$brand-orange: #EB7424;
 $brand-accent-blue: #2f3656;
-$steel-blue: #434c6d;
 
 /* Messaging colors */
 $success: #48AC2C;
@@ -49,11 +48,11 @@ $error: #CE2A2A;
 $info: #DDD;
 
 /* Applied colors */
-$plain-text: $brand-navy;
+$plain-text: $charcoal;
 $meta-text: $gray;
-$link: $brand-navy;
-$link-hover: $steel-blue;
-$border: $steel-blue;
+$link: $white;
+$link-hover: $brand-navy;
+$border: lighten($charcoal, 80%);
 
 /* Social Network Colors */
 $facebook: #3664A2;
@@ -69,12 +68,13 @@ $large: 1024px;
 /* = Mixins = */
 
 @mixin button {
-    background-color: $brand-red;
-    color: #fff;
+    background-color: #fff;
+    border: 3px solid transparent;
+    color: $brand-navy;
     display: inline-block;
-    font-family: $font-stack;
-    font-weight: normal;
-    padding: 0.4rem 1rem;
+    font-family: $font-header;
+    font-weight: bold;
+    padding: 0.4em 1em;
     text-align: center;
     text-transform: uppercase;
     vertical-align: top;
@@ -84,7 +84,7 @@ $large: 1024px;
     &:focus {
         background-color: rgba(255,255,255,0.25);
         border-color: #fff;
-        color: $brand-red;
+        color: $white;
     }
 
     &.disabled,
@@ -266,10 +266,8 @@ img {
 }
 
 header.primary {
-    padding: 4rem 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
+    background-color: $charcoal;
+    padding: 1rem 0;
     .container {
         position: static;
     }
@@ -333,7 +331,6 @@ header.primary {
 }
 
 .branding {
-    text-align: center;
     a,
     img {
         display: block;
@@ -466,7 +463,7 @@ form.search {
 }
 
 main section {
-    padding: 3rem 0;
+    padding: 3rem;
 }
 
 aside.primary {
@@ -508,6 +505,28 @@ nav.supplemental {
     }
 }
 
+footer.primary {
+    background-color: $charcoal;
+    color: $meta-text;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    nav {
+        margin-bottom: 1rem;
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        color: #FFF;
+    }
+    nav li {
+        display: inline-block;
+        margin: 0 0.5rem;
+    }
+}
+
 .social {
     @include no-bullets;
 
@@ -532,29 +551,26 @@ h4,
 h5 {
     font-family: $font-header;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
     text-transform: uppercase;
 }
 
 h1 {
-    font-family: $font-stack;
-    font-size: 2.25rem;
-    font-weight: 800;
+    font-size: 2.5rem;
 }
 
 h2 {
-    color: $brand-navy;
-    font-size: 1.75rem;
+    font-size: 1.7rem;
 }
 
 h3 {
-    color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    color: #939598;
 }
 
 h4 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 h5 {
@@ -632,7 +648,6 @@ ul {
     li,
     dt,
     dd {
-        color: $brand-navy;
         margin-bottom: 0.5em;
     }
 }
@@ -869,40 +884,14 @@ table {
 
 
 /* =  Page Specific = */
-.torso.home {
-    padding: 0;
+
+.contact.hero {
+    padding: 4rem 0;
+    h1 {
+        margin: 0;
+    }
 }
 
-.services {
-    background-color: #fff;
-    position: relative;
-    h1 {
-        color: $brand-red;
-        font-size: 1.5rem;
-    }
-    ul {
-        @include no-bullets;
-        font-size: 1rem;
-        text-transform: uppercase;
-        text-align: center;
-    }
-    &::before,
-    &::after {
-        background: url('../img/layer-waves-top.png') no-repeat top center;
-        content: "";
-        height: 37px;
-        left: 0;
-        position: absolute;
-        top: -37px;
-        width: 100%;
-    }
-    &::after {
-        background: url('../img/layer-waves-bot.png') no-repeat top center;
-        bottom: -54px;
-        height: 54px;
-        top: auto;
-    }
-}
 
 /* = Components = */
 .backgroundvideo {
@@ -928,9 +917,9 @@ footer.primary {
     @include footer();
 }
 
-// header.primary {
-//     @include sticky-header();
-// }
+header.primary {
+    @include sticky-header();
+}
 
 .listing {
     @include listing();
@@ -944,6 +933,10 @@ nav.pagination {
     @include pagination();
 }
 
+header.primary {
+    @include sticky-header();
+}
+
 .tabs {
     @include tabs();
 }
@@ -953,7 +946,7 @@ nav.pagination {
 }
 
 .tiles {
-    @include tiles($columns: 2);
+    @include tiles();
 }
 
 .accordions {
@@ -963,18 +956,19 @@ nav.pagination {
 /* site components */
 
 .hero {
-    background: #fff url(../img/homepage-hero-bg.jpg) no-repeat center center / cover;
-    color: $brand-navy;
-    padding: 11rem 0 4rem;
+    background: $brand-navy url(../img/nyc-skyline.png) no-repeat center bottom / 100% auto;
+    color: #fff;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding: 8rem 0;
     text-align: center;
     h1 {
-        margin-bottom: 2rem;
+        margin-bottom: 4.625rem;
         text-transform: uppercase;
-    }
-    h2 {
-        color: #000;
-        font-size: 1.125rem;
-        margin-bottom: 0.5rem;
     }
     h2:last-child {
         margin-bottom: 0;
@@ -989,38 +983,99 @@ nav.pagination {
         margin: 0 auto 5rem;
         max-width: 80%;
     }
-    a {
-        display: block;
-        font-size: 1.125rem;
-        margin-bottom: 0.5rem;
-    }
-    .contact {
+}
+
+.tiles {
+    > div {
         text-align: center;
     }
 }
 
 .cta {
-    background: $brand-navy;
+    background: #fff;
     border: none;
     padding: 5rem 0;
     text-align: center;
+    a.button {
+        padding: 2rem;
+        border: 2px solid $brand-navy;
+        &:hover {
+            background-color: rgba(13, 22, 64, 0.5);
+        }
+    }
     h2,
     h3,
     h4 {
-        color: #fff;
+        color: $brand-navy;
+    }
+    p {
+        color: #383f63;
+    }
+    .tiles {
+        margin-bottom: 2rem;
+        div {
+            border-radius: 5px;
+            overflow: hidden;
+            padding: 0; 
+            position: relative;
+            text-align: center;
+            h3 {
+                @include transition;
+                align-items: center;
+                background-color: #383f63;
+                display: flex;
+                font-size: 1.5rem;
+                height: 100%;
+                justify-content: center;
+                margin-bottom: 0;
+                position: relative;
+                text-align: left;
+                text-transform: uppercase;
+                width: 100%;
+                &:after {
+                    @include fontawesome;
+                    @include transition;
+                    bottom: 1rem;
+                    content: "\f105";
+                    color: #fff;
+                    font-size: 2rem;
+                    position: absolute;
+                    left: 4.5rem;
+                }
+                &:hover {
+                    background: $brand-accent-blue;
+                    color: #fff;
+                }
+                a {
+                    height: 100%;
+                    padding: 4rem;
+                    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+                    z-index: 50;
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+            i {
+                bottom: -1rem;
+                color: rgba(0,0,0,0.3);
+                font-size: 10rem;
+                position: absolute;
+                right: -2rem;
+                z-index: 5;
+                &.fa-quote-right {
+                    bottom: -1.5rem;
+                    font-size: 9rem;
+                }
+            }
+        }
     }
 }
 
-.email::before,
-.phone::before {
-    @include fontawesome;
-    // color: $brand-navy;
-    content: "\f095";
-    margin-right: 0.5rem;
-}
-
-.phone::before {
-    content: "\f0e0";
+.services {
+    .tiles {
+        @include tiles($columns: 2);
+    }
 }
 
 /* = Media Queries = */
@@ -1039,36 +1094,6 @@ nav.pagination {
         padding-right: 2rem;
         width: 80%;
     }
-
-    .branding {
-        text-align: left;
-    }
-
-    .services {
-        h1 {
-            font-size: 2.25rem;
-        }
-        ul {
-            font-size: 1.5rem;
-        }
-    }
-
-    .hero {
-        padding: 4rem 0;
-        h2 {
-            font-size: 1.5rem;
-        }
-        a {
-            font-size: 1.25rem;
-        }
-        .contact {
-            text-align: right;
-            h2 {
-                text-align: right;
-            }
-        }
-    }
-
 }
 
 
