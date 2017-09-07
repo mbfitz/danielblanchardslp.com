@@ -1078,6 +1078,10 @@ header.primary {
     }
 }
 
+.tiles.about {
+    @include tiles($columns: 2);
+}
+
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
     /* = Layout = */

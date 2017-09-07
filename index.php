@@ -18,27 +18,21 @@
     <main>
         <section>
             <div class="container">
-                <div class="tiles">
+                <div class="tiles about">
                     <div>
                         <p>
                             Daniel is licensed as a bilingual (English–Spanish) speech and language pathologist in New York State and holds a Certificate of Clinical Competency for speech and language pathology through the American Speech and Hearing Association (ASHA).
                         </p>
-                    </div>
-                   <div>
-                       <!-- <a href="/about">learn more about Daniel’s background</a> -->
                         <p>
                             Daniel Blanchard is a New York City-based pediatric speech and language pathologist (SLP) with more than ten years of experience in molding linguistic difficulties into communication successes. With a focus on bilingual children and children with special needs, Daniel delivers testing and treatment that is both innovative and research-based.
                         </p> 
-                   </div>
-                   <div>
-                       <!-- <a href="/services">read about his services</a> -->
                         <p>
                             Daniel accepts clients from all five boroughs of the City. He is a Teacher of Speech and Learning Disabilities (TSLD), received a Bilingual Extension from Columbia University, and is eligible to treat pre-kindergarten, school-age, and high school students via Related Service Authorizations (RSA).
                         </p>
-                   </div>
-                   <!-- <div>
-                       <a href="/testimonials">see what other parents have to say about him</a>
-                   </div> -->
+                    </div>
+                    <div>
+                        <img src="img/3-daniel-blanchard-slp-reading.jpg" alt="Danil=el and student reading together">
+                    </div>
                 </div>
             </div>
         </section>
