@@ -1,7 +1,7 @@
 <?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
 
 <div class="hero contact">
-    <div class="copy">
+    <div class="container">
         <h1>
             Contact
         </h1>
@@ -11,8 +11,8 @@
 <div class="torso contact">
     <main>
         <section>
-            <h2>Contact Daniel today to begin improving your child’s communication skills!</h2>
-            <h3>contact info or form here</h3>
+            <h3>Contact Daniel today to begin improving your child’s communication skills!</h3>
+            <p>contact info or form here</p>
         </section>
         <section class="cta">
             <div class="container">

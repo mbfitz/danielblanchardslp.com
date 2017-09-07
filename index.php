@@ -1,6 +1,6 @@
 <?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
 
-<div class="hero">
+<div class="hero home">
     <div class="container">
         <p class="meta">
              Daniel Blanchard, M.S., CCC-SLP
@@ -29,9 +29,10 @@
                         <p>
                             Daniel accepts clients from all five boroughs of the City. He is a Teacher of Speech and Learning Disabilities (TSLD), received a Bilingual Extension from Columbia University, and is eligible to treat pre-kindergarten, school-age, and high school students via Related Service Authorizations (RSA).
                         </p>
+                        <a class="button" href="about.php">Learn more about Daniel’s background</a>
                     </div>
                     <div>
-                        <img src="img/3-daniel-blanchard-slp-reading.jpg" alt="Danil=el and student reading together">
+                        <img src="img/3-daniel-blanchard-slp-reading.jpg" alt="Daniel and student reading together">
                     </div>
                 </div>
             </div>
@@ -44,13 +45,7 @@
                 <div class="tiles">
                     <div>
                       <h3>
-                        <a href="about.php">learn more about Daniel’s background</a>
-                      </h3>
-                       <i class="fa fa-id-card-o" aria-hidden="true"></i>
-                    </div>
-                    <div>
-                      <h3>
-                        <a href="services.php">read about his services</a>
+                        <a href="services.php">read about Daniel's services</a>
                       </h3>
                        <i class="fa fa-comment" aria-hidden="true"></i>
                     </div>
@@ -60,8 +55,13 @@
                       </h3>
                        <i class="fa fa-quote-right" aria-hidden="true"></i>
                     </div>
+                    <div>
+                      <h3>
+                        <a href="contact.php">Contact Daniel today to begin improving your child’s life</a>
+                      </h3>
+                       <i class="fa fa-id-card-o" aria-hidden="true"></i>
+                    </div>
                 </div>
-                <a class="button" href="contact.php">Contact Daniel today to begin improving your child’s life</a>
             </div>
         </section>
     </main>

@@ -1,13 +1,10 @@
 <?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
 
 <div class="hero">
-    <div class="copy">
-        <!-- <h1>
-            Daniel Blanchard, M.S., CCC-SLP
-        </h1> -->
-        <h2>
+    <div class="container">
+        <h1>
             Testimonials
-        </h2>
+        </h1>
     </div>
 </div>
 
