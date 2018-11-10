@@ -1,4 +1,7 @@
-<?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
+<?php
+    $currentPage = 'services';
+    require($DOCUMENT_ROOT . "partials/header.html"); 
+?>
 
 <div class="hero">
     <div class="container copy">
@@ -15,7 +18,7 @@
     <main>
         <section>
             <div class="container">
-                <div class="flex">
+                <div class="tiles col-2">
                     <div>
                         <h3>Assessment</h3>
                         <p>
@@ -46,7 +49,7 @@
                     conversational competence, pragmatic functioning, social communication, and classroom 
                     learning skills (Adams et al., 2012).<sup>[1]</sup>
                 </p>
-                <a class="button" href="contact.php">
+                <a class="button alt" href="contact.php">
                     Contact Daniel today to begin improving your child’s life
                 </a>
             </div>

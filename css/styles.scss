@@ -40,7 +40,7 @@ $black:     #000;
 /* The brand colors (name them the color) */
 $brand-navy: #0d1640;
 $brand-orange: #EB7424;
-$brand-accent-blue: #2f3656;
+$brand-accent-blue: #5e699d;
 
 /* Messaging colors */
 $success: #48AC2C;
@@ -51,7 +51,7 @@ $info: #DDD;
 $plain-text: $charcoal;
 $meta-text: $gray;
 $link: $white;
-$link-hover: $brand-navy;
+$link-hover: $brand-accent-blue;
 $border: lighten($charcoal, 80%);
 
 /* Social Network Colors */
@@ -74,7 +74,7 @@ $large: 1024px;
     display: inline-block;
     font-family: $font-header;
     font-weight: bold;
-    padding: 0.4em 1em;
+    padding: 1rem 1.5rem;
     text-align: center;
     text-transform: uppercase;
     vertical-align: top;
@@ -82,7 +82,7 @@ $large: 1024px;
 
     &:hover,
     &:focus {
-        background-color: rgba(255,255,255,0.25);
+        background-color: rgba(255,255,255,0);
         border-color: #fff;
         color: $white;
     }
@@ -227,6 +227,8 @@ body {
 }
 
 img {
+    border: 2px solid #fff;
+    box-shadow: 5px 5px 0px rgba(255, 255, 255, 0.5);
     max-width: 100%;
     vertical-align: middle;
 }
@@ -275,8 +277,8 @@ header.primary {
         background: none;
         height: 3rem;
         position: absolute;
-        right: 6.75rem;
-        top: 45%;
+        right: 0.5rem;
+        top: 3rem;
         width: 3rem;
         z-index: 2000;
         &:focus,
@@ -333,8 +335,10 @@ header.primary {
 .branding {
     a,
     img {
+        border: none;
+        box-shadow: none;
         display: block;
-        max-width: 200px;
+        max-width: 150px;
     }
 }
 
@@ -355,18 +359,37 @@ nav.primary {
     margin-bottom: 0;
     > ul {
         li {
-            font-size: 2.75rem;
-            line-height: 1.3;
-            margin-bottom: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+            margin-bottom: 2rem;
             text-align: right;
             a {
-                padding: 1.25rem 0;
+                color: #fff;
+                display: inline-block;
+                padding: 1rem 1.5rem;
+                position: relative;
+                transition: color 0.2s ease-in-out;
+                z-index: 20;
+                &::after {
+                    background: $lightgray;
+                    content: "";
+                    height: 100%;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    transition: width 0.2s ease-in-out;
+                    width: 2px;
+                    z-index: -1;
+                }
             }
         }
         li.active,
         li:hover {
             > a {
-                color: lighten($charcoal, 55%);
+                color: $brand-navy;
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
@@ -383,6 +406,11 @@ nav.primary {
             font-size: 1.5rem;
             text-transform: none;
         }
+        a {
+            &:hover {
+                color: $gray;
+            }
+        }
     }
 }
 
@@ -390,6 +418,29 @@ nav.utility {
     margin-bottom: 0.7rem;
     a {
         font-size: 0.8rem;
+    }
+}
+
+nav.secondary {
+    .button.alt {
+        display: none;
+        border-color: #fff;
+        color: #fff;
+        padding: 1rem 1.5rem;
+        &:hover {
+            background: #fff;
+            color: $brand-navy;
+        }
+    }
+    .contact {
+        a {
+            display: inline-block;
+            padding: 0;
+        }
+        span {
+            display: inline-block;
+            padding: 0.5rem 0.5rem 0;
+        }
     }
 }
 
@@ -428,9 +479,9 @@ nav.utility {
 }
 
 .header-content {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
-    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -456,53 +507,14 @@ form.search {
 .torso {
     @include grouping;
     padding-bottom: 0;
-    padding-top: 3rem;
-    &.testimonials {
-        background-color: #fff;
-    }
 }
 
 main section {
-    padding: 3rem;
+    padding: 1.5rem 1rem;
 }
 
 aside.primary {
     margin-bottom: 2rem;
-}
-
-nav.supplemental {
-    ul {
-        li {
-            display: block;
-            float: none;
-            margin-bottom: 0;
-            a {
-                color: $link;
-                display: block;
-                padding: 0.25em 0;
-            }
-            a:hover {
-                color: $plain-text;
-            }
-        }
-        ul {
-            a {
-                color: $meta-text;
-                font-size: 0.8rem;
-                line-height: 2;
-                padding: 0;
-            }
-        }
-    }
-    > ul {
-        > li {
-            padding-bottom: 0.5em;
-        }
-        > li ~ li {
-            border-top: 1px solid $border;
-            padding-top: 0.5em;
-        }
-    }
 }
 
 footer.primary {
@@ -557,24 +569,24 @@ h5 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
 }
 
 h2 {
-    font-size: 1.7rem;
+    font-size: 2.125rem;
 }
 
 h3 {
-    font-size: 1.3rem;
+    font-size: 1.75rem;
     color: #939598;
 }
 
 h4 {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
 }
 
 h5 {
-    font-size: 1rem;
+    font-size: 1.125rem;
 }
 
 strong {
@@ -791,6 +803,14 @@ input[type="radio"] {
 a.button {
     @include button;
     margin-bottom: 0;
+    &.alt {
+        background: none;
+        padding: 2rem;
+        border: 2px solid $brand-navy;
+        &:hover {
+            background-color: rgba(13, 22, 64, 0.75);
+        }
+    }
 }
 
 button:not(.link),
@@ -817,6 +837,10 @@ input[type="submit"].link {
     @include fontawesome("\f087");
 
     margin-right: 0.5em;
+}
+
+i.fa {
+    color: $brand-accent-blue;
 }
 
 
@@ -897,7 +921,7 @@ table {
 /* =  Page Specific = */
 
 // homepage
-.tiles.about {
+.tiles.col-2 {
     @include tiles($columns: 2);
 }
 
@@ -906,6 +930,9 @@ section.about {
     .container > div {
         display: flex;
         flex-direction: column;
+    }
+    .asset {
+        margin-bottom: 2rem;
     }
 }
 
@@ -980,11 +1007,14 @@ header.primary {
     flex-direction: column;
     -webkit-justify-content: center;
     justify-content: center;
-    padding: 3rem 0;
+    padding: 2rem 0;
     text-align: center;
     h1 {
         margin-bottom: 0;
         text-transform: uppercase;
+    }
+    h2 {
+        font-size: 1.5rem;
     }
     h2:last-child {
         margin-bottom: 0;
@@ -1000,7 +1030,8 @@ header.primary {
         }
     }
     &.home {
-        padding: 8rem 0;
+        background: #0d1640 url(../img/nyc-skyline.png) no-repeat center bottom/auto 50%;
+        padding: 4rem 0;
         h1 {
             margin-bottom: 4.625rem;
         }
@@ -1023,13 +1054,6 @@ header.primary {
     border: none;
     padding: 5rem 0;
     text-align: center;
-    a.button {
-        padding: 2rem;
-        border: 2px solid $brand-navy;
-        &:hover {
-            background-color: rgba(13, 22, 64, 0.5);
-        }
-    }
     h2,
     h3,
     h4 {
@@ -1043,45 +1067,47 @@ header.primary {
         div {
             border-radius: 5px;
             overflow: hidden;
+            min-height: 12rem;
             padding: 0; 
             position: relative;
             text-align: center;
-            h3 {
+            a {
                 @include transition;
-                align-items: center;
                 background-color: #383f63;
-                display: flex;
+                display: block;
                 font-size: 1.5rem;
                 height: 100%;
-                justify-content: center;
+                left: 0;
                 margin-bottom: 0;
-                position: relative;
+                padding: 3rem;
+                position: absolute;
                 text-align: left;
                 text-transform: uppercase;
+                top: 0;
                 width: 100%;
-                &:after {
-                    @include fontawesome;
-                    @include transition;
-                    bottom: 1rem;
-                    content: "\f105";
-                    color: #fff;
-                    font-size: 2rem;
-                    position: absolute;
-                    left: 4.5rem;
-                }
                 &:hover {
                     background: $brand-accent-blue;
                     color: #fff;
                 }
-                a {
-                    height: 100%;
-                    padding: 4rem;
-                    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-                    z-index: 50;
-                    &:hover {
-                        color: #fff;
-                    }
-                }
+            }
+            &:after {
+                @include fontawesome;
+                @include transition;
+                bottom: 1rem;
+                content: "\f105";
+                color: #fff;
+                font-size: 2rem;
+                position: absolute;
+                left: 3rem;
+                z-index: 10;
+            }
+            h3 {
+                color: #fff;
+                font-size: 1.25rem;
+                position: relative;
+                text-align: left;
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+                z-index: 10;
             }
             i {
                 bottom: -1rem;
@@ -1093,6 +1119,11 @@ header.primary {
                 &.fa-quote-right {
                     bottom: -1.5rem;
                     font-size: 9rem;
+                }
+            }
+            &:hover {
+                &::after {
+                    left: 90%;
                 }
             }
         }
@@ -1108,6 +1139,46 @@ header.primary {
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
+    main section {
+        padding: 3rem;
+    }
+    /* = Typography = */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        margin-bottom: 3rem;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    h3 {
+        font-size: 2.25rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    .branding {
+        a {
+            max-width: 200px;
+        }
+        img {
+            max-width: 200px;
+        }
+    }
+
     /* = Layout = */
     aside.primary {
         float: right;
@@ -1121,6 +1192,38 @@ header.primary {
         float: left;
         padding-right: 2rem;
         width: 80%;
+    }
+
+    header.primary {
+        .menu-toggle {
+            right: 3rem;
+        }
+    }
+
+    nav.primary {
+        ul li {
+            font-size: 2rem;
+        }
+    }
+
+    nav.secondary {
+        .contact {
+            text-align: right;
+            position: absolute;
+            right: 9rem;
+            top: 3.25rem;
+        }
+    }
+    .hero {
+        h2 {
+            font-size: 2.5rem;
+        }
+        padding: 3rem 0;
+    }
+
+    .hero.home {
+        background: #0d1640 url(../img/nyc-skyline.png) no-repeat center bottom/100% auto;
+        padding: 8rem 0;
     }
 
     section.about {
@@ -1163,6 +1266,17 @@ header.primary {
             }
         }
     }
+
+    .cta {
+        .tiles {
+            div {
+                min-height: 15rem;
+            }
+            h3 {
+                font-size: 1.75rem;
+            }
+        }
+    }
 }
 
 
@@ -1182,32 +1296,6 @@ header.primary {
     }
     aside.primary ~ main {
         width: 70%;
-    }
-
-    /* = Typography = */
-    h1 {
-        font-size: 3.75rem;
-        margin-bottom: 3rem;
-    }
-
-    h2 {
-        font-size: 2.875rem;
-        margin-bottom: 3rem;
-    }
-
-    h3 {
-        font-size: 1.75rem;
-        margin-bottom: 2.25rem;
-    }
-
-    h4 {
-        font-size: 1.25rem;
-        margin-bottom: 2.25rem;
-    }
-
-    h5 {
-        font-size: 1.15rem;
-        margin-bottom: 2.25rem;
     }
 }
 

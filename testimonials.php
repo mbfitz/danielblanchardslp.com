@@ -1,5 +1,7 @@
-<?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
-
+<?php
+    $currentPage = 'testimonials';
+    require($DOCUMENT_ROOT . "partials/header.html"); 
+?>
 <div class="hero">
     <div class="container">
         <h1>
@@ -10,8 +12,13 @@
 
 <div class="torso testimonials">
     <main>
-        <section class="cta">
+        <section>
             <div class="container">
+                <div class="intro">
+                    <p>
+                        Parents love working with Daniel because their kids love working with Daniel! See what a few families said recently.
+                    </p>
+                </div>
                 <div class="testimonial">
                     <blockquote>
                         <p> 
@@ -52,7 +59,9 @@
                 </div>
 
             </div>
-            <a class="button" href="contact.php">
+        </section>
+        <section class="cta">
+            <a class="button alt" href="contact.php">
                 Contact Daniel today to begin improving your child’s life
             </a>
         </section>

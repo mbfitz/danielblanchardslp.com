@@ -1,4 +1,7 @@
-<?php require($DOCUMENT_ROOT . "partials/header.html"); ?>
+<?php
+    $currentPage = 'about';
+    require($DOCUMENT_ROOT . "partials/header.html"); 
+?>
 
 <div class="hero">
     <div class="container">
@@ -61,7 +64,7 @@
             </div>
         </section>
         <section class="cta">
-            <a class="button" href="contact.php">
+            <a class="button alt" href="contact.php">
                 Contact Daniel today to begin improving your child’s life
             </a>
         </section>

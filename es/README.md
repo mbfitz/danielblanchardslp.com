@@ -12,9 +12,7 @@ Supported Browsers: IE11+, Chrome, Firefox, and Safari.
 
 Daniel Blanchard SLP
 =======
-* npm install
-* npm install gulp
-* gulp watch
+
 
 License
 =======
