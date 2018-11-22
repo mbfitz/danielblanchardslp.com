@@ -66,7 +66,7 @@
                         <a href="contact.php">
                             <h3>
                                 Contact Daniel today
-                                <span>555-555-5555</span>
+                                <span>413-218-9837</span>
                             </h3>
                         </a>
                         <i class="fa fa-id-card-o" aria-hidden="true"></i>
