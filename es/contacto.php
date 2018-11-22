@@ -33,7 +33,7 @@
               </p>
             </div>
             <div>
-                <img src="img/daniel-blanchard.jpg" alt="Daniel">
+                <img src="/img/daniel-blanchard.jpg" alt="Daniel">
             </div>
           </div>
         </section>

@@ -28,7 +28,7 @@
                         </p>
                         <h3>Intervention</h3>
                         <p>
-                           Daniel then creates linguistic articulation goals according to age-appropriate 
+                           Daniel then creates linguistic and articulation goals according to age-appropriate 
                            developmental norms and formulates a comprehensive, individualized treatment plan 
                            for each client. At the heart of each child’s treatment plan are creative 
                            interventions that help the child acquire the specific language skills they need.

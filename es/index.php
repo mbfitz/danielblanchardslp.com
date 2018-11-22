@@ -1,5 +1,5 @@
 <?php
-    $currentPage = 'casa';
+    $currentPage = 'Home';
     require($DOCUMENT_ROOT . "partials/header.html"); 
 ?>
 
